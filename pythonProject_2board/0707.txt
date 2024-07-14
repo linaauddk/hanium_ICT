@@ -1,0 +1,271 @@
+clear
+clear
+sudo raspi-config
+clear
+sudo raspi-config
+clear
+sudo apt update
+sudo apt upbrade -y
+sudo apt upgrade -y
+sudo apt install samba samba-common-bin -y
+sudo nano /etc/samba/smb.conf
+sudo smbpasswd -a pi
+sudo /etc/init.d/smbd restart
+ip s
+ip a
+sudo /etc/init.d/smbd restart
+clear
+vncserver
+sudo apt-get install python3-pip
+sudo apt-get install python3-opencv
+pip3 install flask
+python3 -m venv myenv
+source myenv/bin/activate
+pip install flask
+pip install opencv-python
+ll
+ls
+cd PycharmProjects/
+ll
+ls
+cd pythonProject/
+ll
+ls
+decativate
+deativate
+deactibate
+deactivate
+ls
+cd ../
+ls
+cd ~
+ll
+ls
+cd PycharmProjects/
+ll
+ls
+cd pythonProject/
+ll
+ls
+ls -al
+cd .venv
+ll
+ls
+cd bin
+ll
+ls
+ativate
+activate
+../activate
+source activate
+pip install flask
+pip install opencv-python
+exit
+celar
+clear
+apt-get update
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install default-jdk
+tar -xzf pycharm-community-2024.1.4.tar.gz
+wget https://download.jetbrains.com/python/pycharm-community-2024.1.4.tar.gz
+tar -xzf pycharm-community-2024.1.4.tar.gz 
+l
+ls
+cd pycharm-community-2024.1.4
+ll
+ks
+ls
+cd vin
+cd bin
+ls
+ls -al
+la
+chmod u+x pycharm.svg 
+ls -al
+cd ../
+./bin/pycharm.sh
+cd ~
+rm pycharm-community-2024.1.4.tar.gz
+ll
+ls
+rm pycharm-community-2024.1.4/
+rm pycharm-community-2024.1.4
+rm -rf pycharm-community-2024.1.4/
+ll
+ls
+wget https://download.jetbrains.com/python/pycharm-community-2024.1.4.tar.gz
+ls
+tar -xzf pycharm-community-2024.1.4.tar.gz
+ls
+rm -rf pycharm-community-2024.1.4
+ll
+ls
+tar -xvzf pycharm-community-2024.1.4.tar.gz
+ls
+cd pycharm-community-2024.1.4
+ll
+ls
+cd bin
+ll
+ls
+sh pycharm.sh 
+sudo apt update
+sudo apt install openjdk-11-jdk
+sudo apt update
+sudo apt install default-jdk
+java -version
+sudo vim ~/.bashrc
+sudo vi ~/.bashrc
+cd ~/pycharm-community-2024.1.4/bin
+sh pycharm.sh
+ip a
+exit
+ls
+cd PycharmProjects/
+ls
+cd pythonProject/
+ls
+ls -al
+cd .venv/
+ls
+cd bin/
+ls
+source ../activate
+source ./activate
+cd ../
+ls
+python app.py
+is
+ls
+pip3 install adafruit-blinka
+yes
+cd /etc
+ll
+ls
+ifconfig
+vim net
+source ~/PycharmProjects/pythonProject/.venv/bin/activate
+clear
+ll
+ls
+cd pycharm-community-2024.1.4/
+ll
+ls
+cd :q
+cd ../
+ls
+cd PycharmProjects/pythonProject/
+ls
+cd .venv
+ls
+cd bin
+ls
+./activate
+. /activate
+activate
+../activate
+../ activate
+~/activate
+source activate
+deactivate
+clear
+cd ~
+clear
+source ~/PycharmProjects/pythonProject/.venv/bin/activate
+cd PycharmProjects/pythonProject/
+ll
+ls
+clear
+cd ~
+clear
+cd PycharmProjects/pythonProject/
+python app.py
+ll
+ls
+python app.py 
+clear
+ll
+ls
+cd PycharmProjects/
+ll
+ls
+cd pythonProject
+ll
+ls
+ll
+ls -al
+cd ../pythonProject1
+ll
+ls
+cd ../
+ll
+ls
+cd'pythonProject1'
+ll
+ls
+rm 'pythonProject1 '/
+rm -rf 'pythonProject1 '/
+ll
+ls
+
+sudo ufw allow 5000
+ip a
+cd PycharmProjects/pythonProject
+ls
+python app.py
+vi app.py 
+sudo lsof -i :9999
+sudo kill -9 2503
+sudo lsof -i :9999
+sudo lsof -i :5000
+sudo kill -9 3325
+sudo lsof -i :5000
+clear
+cd 
+ll
+ls
+cd PycharmProjects/pythonProject
+ll
+ls
+vim app.py
+vi app.py 
+sudo vi app.py 
+python app.py
+ls /dev/video*
+python app.py
+sudo raspi-config
+cd PycharmProjects/pythonProject
+python app.py
+ls /dev/ttyACM*
+sudo raspi-config
+python3 serial_communication_gpio.py
+$ sudo apt-get update -y
+$ sudo apt-get upgrade -y
+$ reboot
+pip3 install pyserial
+pip install pyserial
+python3 -c "import serial; print(serial.__version__)"
+python3 -m venv myenv
+ll
+ls
+ls -al
+cd myvenv
+cd myenv
+ll
+ls
+cd bin
+ls
+source activate
+pip install pyserial
+cd ..
+cd ~
+ls
+cd PycharmProjects/
+ls
+cd pythonProject
+LS
+ls
+python serial_communication_gpio.py 
+history
+history -w 0707.txt

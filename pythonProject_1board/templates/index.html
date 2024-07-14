@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>WEBCAM STREAMING</title>
+    <style>
+        .sensor-container {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .direction-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .direction-buttons .row {
+            width: 100%;
+            justify-content: center;
+        }
+        .direction-buttons .btn {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            border-radius: 50%;
+        }
+        .speed-control {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .speed-control label {
+            margin-right: 10px;
+        }
+        .roll-control {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .roll-control .btn {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sensor-container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">온습도 센서</h5>
+                            <p class="card-text">온도: <span id="temperature">20°C</span></p>
+                            <p class="card-text">습도: <span id="humidity">50%</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">연기 감지 센서</h5>
+                            <p class="card-text">연기 감지 상태: <span id="smoke">정상</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h3 class="mt-5">Live Streaming</h3>
+                <img src="{{ url_for('video_feed') }}" width="100%">
+            </div>
+        </div>
+        <div class="direction-buttons">
+            <div class="row">
+                <button class="btn btn-secondary" id="btn-up">▲</button>
+            </div>
+            <div class="row">
+                <button class="btn btn-secondary" id="btn-left">◀</button>
+                <button class="btn btn-secondary" id="btn-down">▼</button>
+                <button class="btn btn-secondary" id="btn-right">▶</button>
+            </div>
+            <div class="row">
+                <button class="btn btn-danger" id="btn-stop">■</button>
+            </div>
+        </div>
+        <div class="speed-control">
+            <label for="speed">속도 조절:</label>
+            <input type="range" class="form-control-range" id="speed" min="0" max="100" step="1">
+            <span id="speed-value">50</span>
+        </div>
+        <div class="roll-control">
+            <button class="btn btn-primary" id="btn-stop-roll">감개 멈춤</button>
+            <button class="btn btn-primary" id="btn-forward">Forward</button>
+            <button class="btn btn-primary" id="btn-reverse">Reverse</button>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBkFz2tmP/JpAaqs/rfjHpPgxJaxJ9fAu8fj5IFga"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('speed').addEventListener('input', function() {
+            document.getElementById('speed-value').innerText = this.value;
+        });
+
+        document.getElementById('btn-up').addEventListener('click', function() {
+            sendCommand('w');
+        });
+
+        document.getElementById('btn-down').addEventListener('click', function() {
+            sendCommand('s');
+        });
+
+        document.getElementById('btn-left').addEventListener('click', function() {
+            sendCommand('a');
+        });
+
+        document.getElementById('btn-right').addEventListener('click', function() {
+            sendCommand('d');
+        });
+
+        document.getElementById('btn-stop').addEventListener('click', function() {
+            sendCommand('x');
+        });
+
+        document.getElementById('btn-stop-roll').addEventListener('click', function() {
+            sendCommand('k');
+        });
+
+        document.getElementById('btn-forward').addEventListener('click', function() {
+            sendCommand('j');
+        });
+
+        document.getElementById('btn-reverse').addEventListener('click', function() {
+            sendCommand('l');
+        });
+
+        function sendCommand(command) {
+            fetch(`/command/${command}`, {
+                method: 'POST'
+            }).then(response => response.text())
+              .then(data => console.log(data))
+              .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
